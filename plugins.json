@@ -1,0 +1,108 @@
+{
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "id": "code-power-mode",
+      "packageJson": {
+        "name": "code-power-mode",
+        "displayName": "Code Power Mode",
+        "description": "Add particle effects and explosions when typing",
+        "version": "1.0.0",
+        "publisher": "trae-ide",
+        "engines": {
+          "vscode": "^1.0.0"
+        },
+        "categories": ["Other"],
+        "activationEvents": ["onStartupFinished"],
+        "main": "./index.js",
+        "contributes": {
+          "commands": [
+            {
+              "command": "codePowerMode.toggle",
+              "title": "Toggle Code Power Mode"
+            }
+          ],
+          "configuration": {
+            "title": "Code Power Mode",
+            "properties": {
+              "codePowerMode.enabled": {
+                "type": "boolean",
+                "default": true,
+                "description": "Enable Code Power Mode"
+              }
+            }
+          }
+        }
+      },
+      "downloadUrl": "./plugins/code-power-mode.zip",
+      "isActive": false
+    },
+    {
+      "id": "vue-code-formatter",
+      "packageJson": {
+        "name": "vue-code-formatter",
+        "displayName": "Vue Code Formatter",
+        "description": "Format Vue files with Shift+Alt+F",
+        "version": "1.0.0",
+        "publisher": "trae-ide",
+        "engines": {
+          "vscode": "^1.0.0"
+        },
+        "categories": ["Formatters"],
+        "activationEvents": ["onCommand:vueCodeFormatter.format"],
+        "main": "./index.js",
+        "contributes": {
+          "commands": [
+            {
+              "command": "vueCodeFormatter.format",
+              "title": "Format Vue File"
+            }
+          ],
+          "keybindings": [
+            {
+              "command": "vueCodeFormatter.format",
+              "key": "shift+alt+f",
+              "mac": "shift+alt+f",
+              "when": "editorLangId == vue"
+            }
+          ]
+        }
+      },
+      "downloadUrl": "./plugins/vue-code-formatter.zip",
+      "isActive": false
+    },
+    {
+      "id": "vue-syntax-highlight",
+      "packageJson": {
+        "name": "vue-syntax-highlight",
+        "displayName": "Vue Syntax Highlight",
+        "version": "1.0.0",
+        "description": "Vue 文件语法高亮支持",
+        "author": "My IDE",
+        "engines": {
+          "vscode": "^1.0.0"
+        },
+        "main": "index.js",
+        "contributes": {
+          "languages": [
+            {
+              "id": "vue",
+              "extensions": [".vue"],
+              "aliases": ["Vue", "vue"],
+              "mimetypes": ["text/x-vue"]
+            }
+          ],
+          "grammars": [
+            {
+              "language": "vue",
+              "scopeName": "text.html.vue",
+              "path": "./syntaxes/vue.tmLanguage.json"
+            }
+          ]
+        }
+      },
+      "downloadUrl": "./plugins/vue-syntax-highlight.zip",
+      "isActive": false
+    }
+  ]
+}
